@@ -1,0 +1,87 @@
+.auth
+    display: flex
+    align-items: center
+    justify-content: center
+    &-form
+        margin-top: 19.3rem
+        display: inline-block
+        position: relative
+        &__logo
+            position: absolute
+            top: -152px
+            left: -109px
+            img
+                max-width: 270px
+                height: auto
+
+        &-alert
+            width: 300px
+        &__input
+            position: relative
+            display: flex
+            flex-direction: column
+            input
+                width: 305px
+                height: 48px
+                margin-bottom: 20px
+                padding-left: 18px
+                font-size: 20px
+                border: 1.5px solid #d6d5d5
+                font-stretch: expanded
+                &:hover
+                    border: 1.5px solid #e5b9ff
+                    transition: 0.4s ease-in-out
+                &:active, &:focus
+                    border: 1.5px solid #c053ff
+                    transition: 0.4s ease-in-out
+                &::placeholder,
+                    color: #c3c3c3
+
+            label
+                font-weight: 500
+                color: #646363
+                font-size: 15px
+                padding-left: 19px
+                padding-bottom: 10px
+                font-stretch: expanded
+            &:first-child
+                label
+                    padding-bottom: 13px
+        &__error
+            position: absolute
+            bottom: 4px
+            right: 6px
+            font-size: 13px
+            color: #b46edd
+        &__checkbox
+            margin-left: 1px
+            display: flex
+            flex-direction: row
+            p
+                cursor: pointer
+                margin-top: 1px
+                font-weight: 500
+                font-size: 16px
+                margin-left: 12px
+                color: #646363
+        &__button
+            margin-top: 20px
+            margin-left: 2px
+.ant
+    &-alert
+        &-message
+            font-size: 15px
+
+@media screen and (max-width: 576px)
+    .auth
+        &-form
+            margin-top: 7rem
+            &__logo
+                display: flex
+                justify-content: center
+                align-items: center
+                position: static
+@media screen and (max-width: 576px)
+    .auth
+        &-form
+            margin-top: 4rem
