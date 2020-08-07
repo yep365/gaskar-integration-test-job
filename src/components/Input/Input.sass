@@ -1,0 +1,52 @@
+.input
+    position: relative
+    display: flex
+    flex-direction: column
+    input
+        width: 305px
+        height: 48px
+        margin-bottom: 20px
+        padding-left: 18px
+        font-size: 20px
+        border: 1.5px solid #d6d5d5
+        font-stretch: expanded
+        &:hover
+            border: 1.5px solid #e5b9ff
+            transition: 0.4s ease-in-out
+        &:active, &:focus
+            border: 1.5px solid #c053ff
+            transition: 0.4s ease-in-out
+        &::placeholder,
+            color: #c3c3c3
+
+    label
+        font-weight: 500
+        color: #646363
+        font-size: 15px
+        padding-left: 19px
+        padding-bottom: 10px
+        font-stretch: expanded
+
+    &-error
+        position: absolute
+        bottom: 4px
+        right: 6px
+        font-size: 13px
+        color: #b46edd
+@media screen and (max-width: 576px)
+    .input
+        width: 290px
+        input
+            width: 290px
+            height: 40px
+            font-size: 15px
+
+@media screen and (max-width: 350px)
+    .input
+        width: 270px
+        input
+            width: 270px
+            height: 40px
+            font-size: 14px
+        label
+            font-size: 14px

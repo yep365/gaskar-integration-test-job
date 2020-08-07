@@ -3,3 +3,8 @@ export { default as AuthForm } from "./AuthForm";
 export { default as FormPropsReceiver } from "./FormPropsReceiver";
 export { default as Checkbox } from "./Checkbox";
 export { default as Button } from "./Button";
+export { default as Input } from "./Input";
+export { default as CheckboxLabel } from "./CheckboxLabel";
+export { default as NavSelect } from "./NavSelect";
+export { default as Sidebar } from "./Sidebar";
+export { default as DropDown } from "./DropDown";

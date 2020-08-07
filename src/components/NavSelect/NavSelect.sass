@@ -1,0 +1,60 @@
+.nav
+    &-select
+        cursor: pointer
+        width: 311px
+        height: 52px
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        background-color: #37186e
+        color: #ededee
+        position: relative
+        transition: 0.3s ease-in-out
+        &:hover
+            background-color: #40266d
+        &__logo
+            width: 20px
+            height: auto
+            margin-right: 10px
+            margin-left: 22px
+        &__text
+            font-size: 18px
+            font-weight: 700
+        &__newtasks
+            margin-left: 8px
+            font-weight: 700
+            color: #9999a2
+            font-size: 18px
+
+        &--selected
+            background-color: #200a48
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                transition: 0.5s ease-in-out
+                height: 52px
+                left: 1px
+                width: 11px
+                background-color: #b331cb
+                border-left: 0.5px solid #390642
+
+        &--dropdown
+            .nav-select
+                &__text
+                    margin-left: 60px
+                    font-size: 14px
+                &__newtasks
+                    font-size: 16px
+                &--selected
+                    &:hover
+                        background-color: #8c77b3
+
+.dropdown
+    &-logo
+        position: absolute
+        right: 19px
+        top: 20px
+        width: 11px
+    &-item
+        display: block

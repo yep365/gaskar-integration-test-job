@@ -3,7 +3,12 @@ import React, { useRef, useState } from "react";
 import { Formik, Form, Field, ErrorMessage, Submit } from "formik";
 import * as Yup from "yup";
 
-import { FormPropsReceiver, Checkbox, Button } from "../../components";
+import {
+  FormPropsReceiver,
+  CheckboxLabel,
+  Button,
+  Input,
+} from "../../components";
 
 import Logo from "../../assets/Logo.png";
 
@@ -45,37 +50,28 @@ const AuthForm = () => {
       >
         {({ isValid, dirty, errors, validateForm }) => (
           <Form>
-            <div className="auth-form__input">
+            <div className="auth-form__content">
               <FormPropsReceiver
                 isValid={isValid}
                 dirty={dirty}
                 errors={errors}
                 validateForm={validateForm}
               />
-              <label htmlFor="login">Логин</label>
-              <Field type="text" id="login" name="login" placeholder="Логин" />
-              <div className="auth-form__error">
-                <ErrorMessage name="login" />
-              </div>
-            </div>
-            <div className="auth-form__input">
-              <label htmlFor="password">Пароль</label>
-              <Field
-                type="password"
-                id="password"
-                name="password"
+              <Input label="Логин" placeholder="Логин" name="login" />
+              <Input
+                label="Пароль"
                 placeholder="Пароль"
+                name="password"
+                type="password"
               />
-              <div className="auth-form__error">
-                <ErrorMessage name="password" />
+              <CheckboxLabel
+                text="Запомнить пароль"
+                onToggleCheckBox={onToggleCheckBox}
+                checkBoxState={checkBoxState}
+              />
+              <div className="auth-form__button">
+                <Button text="Войти" />
               </div>
-            </div>
-            <div className="auth-form__checkbox" onClick={onToggleCheckBox}>
-              <Checkbox checked={checkBoxState} readOnly />
-              <p>Запомнить пароль</p>
-            </div>
-            <div className="auth-form__button">
-              <Button text="Войти" />
             </div>
           </Form>
         )}

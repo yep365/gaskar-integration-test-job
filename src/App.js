@@ -1,11 +1,12 @@
 import React from "react";
 
-import { Auth } from "./components";
+import { Auth, NavSelect, Sidebar } from "./components";
 
 function App() {
   return (
     <div className="wrapper">
-      <Auth />
+      {/* <Auth /> */}
+      <Sidebar />
     </div>
   );
 }
