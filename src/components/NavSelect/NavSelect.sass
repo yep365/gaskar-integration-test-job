@@ -2,14 +2,14 @@
     &-select
         cursor: pointer
         width: 311px
-        height: 52px
+        height: 48px
         display: flex
         align-items: center
         justify-content: flex-start
         background-color: #37186e
         color: #ededee
         position: relative
-        transition: 0.3s ease-in-out
+        transition: 0.05s ease-in-out
         &:hover
             background-color: #40266d
         &__logo
@@ -33,9 +33,9 @@
                 content: ""
                 position: absolute
                 transition: 0.5s ease-in-out
-                height: 52px
+                height: 46px
                 left: 1px
-                width: 11px
+                width: 10px
                 background-color: #b331cb
                 border-left: 0.5px solid #390642
 
@@ -58,3 +58,14 @@
         width: 11px
     &-item
         display: block
+    &-animation
+        &-enter
+            opacity: 0
+        &-enter-active
+            opacity: 0
+            transition: opacity 200ms
+        &-exit
+            opacity: 0
+        &-exit-active
+            opacity: 0
+            transition: opacity 200ms

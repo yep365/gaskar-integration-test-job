@@ -8,3 +8,5 @@ export { default as CheckboxLabel } from "./CheckboxLabel";
 export { default as NavSelect } from "./NavSelect";
 export { default as Sidebar } from "./Sidebar";
 export { default as DropDown } from "./DropDown";
+export { default as AdminPanel } from "./AdminPanel";
+export { default as Main } from "./Main";

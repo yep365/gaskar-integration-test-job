@@ -1,0 +1,68 @@
+.main
+    flex-grow: 1
+    &-wrapper
+        margin: 34px 50px 0 32px
+    &-topbar
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        background-color: #f9f9fa
+        height: 60px
+        &__account
+            margin-right: 35px
+
+    &-header
+        &__title
+            display: block
+            h1
+                color: #200a48
+                font-size: 35px
+                font-weight: 400
+                letter-spacing: 3px
+
+        &__menu
+            display: flex
+            align-items: center
+            margin-left: 12px
+            margin-top: 55px
+            letter-spacing: 0.5px
+            font-weight: 600
+            color: #200a48
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                transition: 0.5s ease-in-out
+                height: 2px
+                width: 100%
+                left: -9px
+                top: 29px
+                background-color: #adb0b3
+                border-left: 0.5px solid #390642
+
+        &__item
+            color: #adb0b3
+            cursor: pointer
+            &:last-child
+                margin-left: 23px
+
+            &--selected
+                color: #27292c
+                position: relative
+                &::after
+                    content: ""
+                    position: absolute
+                    transition: 0.5s ease-in-out
+                    height: 4px
+                    width: 168px
+                    left: -10px
+                    top: 28px
+                    z-index: 2
+                    background-color: #6f48b3
+                    border-left: 0.5px solid #390642
+                    color: #fafafa
+.badge
+    img
+        width: 28px
+        height: 28px
+        border-radius: 50%

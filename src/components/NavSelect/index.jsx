@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
+import { CSSTransition } from "react-transition-group";
 
 import { sidebarActions } from "../../redux/actions";
 import { DropDown } from "../../components";
