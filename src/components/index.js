@@ -10,3 +10,6 @@ export { default as Sidebar } from "./Sidebar";
 export { default as DropDown } from "./DropDown";
 export { default as AdminPanel } from "./AdminPanel";
 export { default as Main } from "./Main";
+export { default as Badge } from "./Badge";
+export { default as Card } from "./Card";
+export { default as ProgressBar } from "./ProgressBar";
