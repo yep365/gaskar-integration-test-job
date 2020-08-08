@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import HamburgerMenu from "react-hamburger-menu";
+import { useDispatch } from "react-redux";
 
+import { authActions } from "../../redux/actions";
 import {
   Button,
   Badge,
@@ -9,6 +11,7 @@ import {
   CreateProjectModal,
   Sidebar,
 } from "../../components";
+import { openNotification } from "../../utils/helpers";
 
 import SortTabs from "../../assets/SortTabs.png";
 import SortTabs1 from "../../assets/SortTabs1.png";
@@ -35,6 +38,7 @@ const Main = () => {
   const [selectedCategory, setselectedCategory] = useState(0);
   const [openBurger, setOpenBurger] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const dispatch = useDispatch();
   const categories = [
     { title: "СПИСОК ПРОЕКТОВ" },
     { title: "ДОРОЖНЫЕ КАРТЫ" },
@@ -69,6 +73,13 @@ const Main = () => {
   const onBurgerClick = () => {
     setOpenBurger(!openBurger);
   };
+  const onProfileClick = () => {
+    dispatch(authActions.setAuth(false));
+    openNotification({
+      title: "Вы успешно вышли из системы!",
+      type: "success",
+    });
+  };
   return (
     <>
       {openBurger && window.innerWidth <= 750 && (
@@ -96,21 +107,11 @@ const Main = () => {
       >
         <div className="main-topbar">
           <div className="main-topbar__account">
-            <Badge imgUrl="https://mediaproxy.salon.com/width/1200/height/1200/https://media.salon.com/2019/04/suprised-man.jpg" />
-          </div>
-          {/* <div className="main-topbar__burger">
-            <HamburgerMenu
-              isOpen={openBurger}
-              width={18}
-              height={18}
-              strokeWidth={3}
-              rotate={0}
-              color="#b331cb"
-              borderRadius={0}
-              animationDuration={0.2}
-              menuClicked={onBurgerClick}
+            <Badge
+              onClick={onProfileClick}
+              imgUrl="https://mediaproxy.salon.com/width/1200/height/1200/https://media.salon.com/2019/04/suprised-man.jpg"
             />
-          </div> */}
+          </div>
         </div>
         <div className="main-wrapper">
           <div className="main-header">

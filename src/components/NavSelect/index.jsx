@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
-import { CSSTransition } from "react-transition-group";
+import { useHistory } from "react-router";
 
 import { sidebarActions } from "../../redux/actions";
 import { DropDown } from "../../components";
@@ -19,9 +19,11 @@ const NavSelect = ({
   selected,
   index,
   acitveNavbar,
+  link,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const animation = {
     transform: `rotate(${selected && isOpen ? `180` : `0`}deg)`,
@@ -38,6 +40,7 @@ const NavSelect = ({
 
   const handleClick = () => {
     dispatch(sidebarActions.setActiveNavbar(index));
+    history.push(link);
     if (dropDownItems) {
       onOpenDropdown();
     }
@@ -83,6 +86,8 @@ const NavSelect = ({
               key={index}
               index={index}
               acitveSubNavbar={acitveSubNavbar}
+              link={item.link}
+              history={history}
             />
           ))}
         </>

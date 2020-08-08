@@ -1,18 +1,18 @@
 const initialState = {
-  auth: false,
-  validation: false,
+  isAuth: false,
+  error: null,
 };
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case "AUTH:SET_AUTH":
       return {
         ...state,
-        auth: payload,
+        isAuth: payload,
       };
-    case "AUTH:SET_VALIDATION":
+    case "AUTH:SET_ERROR":
       return {
         ...state,
-        validation: payload,
+        error: payload,
       };
 
     default:

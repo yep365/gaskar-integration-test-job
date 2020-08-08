@@ -1,6 +1,8 @@
-import React, { useRef, useState } from "react";
-import { Formik, Form, Field, ErrorMessage, Submit } from "formik";
+import React, { useRef, useState, useEffect } from "react";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 
 import {
   FormPropsReceiver,
@@ -8,6 +10,7 @@ import {
   Button,
   Input,
 } from "../../components";
+import { authActions } from "../../redux/actions";
 
 import Logo from "../../assets/Logo.png";
 
@@ -15,8 +18,17 @@ import "./AuthForm.sass";
 
 const AuthForm = () => {
   const [checkBoxState, setCheckBoxState] = useState(false);
+  const { isAuth } = useSelector(({ auth }) => auth);
   const formRef = useRef(null);
-  let errUpLoading = true;
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!!isAuth) {
+      history.push("/");
+    }
+  }, [isAuth]);
+
   const handleSubmit = () => {
     if (formRef.current) {
       formRef.current.handleSubmit();
@@ -30,8 +42,8 @@ const AuthForm = () => {
     login: Yup.string().required("Введите Логин"),
     password: Yup.string().required("Введите Пароль"),
   });
-  const onSubmit = (values, { resetForm }) => {
-    // dispatch(cellActions.setValidation(false));
+  const onSubmit = ({ login, password }) => {
+    dispatch(authActions.fetchAuthStatus(login, password));
   };
   const onToggleCheckBox = () => {
     setCheckBoxState(!checkBoxState);
@@ -50,12 +62,12 @@ const AuthForm = () => {
         {({ isValid, dirty, errors, validateForm }) => (
           <Form>
             <div className="auth-form__content">
-              <FormPropsReceiver
+              {/* <FormPropsReceiver
                 isValid={isValid}
                 dirty={dirty}
                 errors={errors}
                 validateForm={validateForm}
-              />
+              /> */}
               <Input label="Логин" placeholder="Логин" name="login" />
               <Input
                 label="Пароль"
@@ -75,14 +87,6 @@ const AuthForm = () => {
           </Form>
         )}
       </Formik>
-      {/* {errUpLoading && (
-        <div className="auth-form-alert">
-          <Alert
-            message="Не удалось авторизоваться, проверте логин и пароль."
-            type="error"
-          />
-        </div>
-      )} */}
     </div>
   );
 };

@@ -13,11 +13,14 @@ const DropDown = ({
   newTasks,
   index,
   acitveSubNavbar,
+  link,
+  history,
 }) => {
   const dispatch = useDispatch();
 
   const onDropdownClick = () => {
     if (acitveSubNavbar !== index) {
+      history.push(link);
       dispatch(sidebarActions.setActiveSubNavbar(index));
     }
   };

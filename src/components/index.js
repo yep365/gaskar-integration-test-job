@@ -1,4 +1,3 @@
-export { default as Auth } from "./Auth";
 export { default as AuthForm } from "./AuthForm";
 export { default as FormPropsReceiver } from "./FormPropsReceiver";
 export { default as Checkbox } from "./Checkbox";
@@ -8,7 +7,6 @@ export { default as CheckboxLabel } from "./CheckboxLabel";
 export { default as NavSelect } from "./NavSelect";
 export { default as Sidebar } from "./Sidebar";
 export { default as DropDown } from "./DropDown";
-export { default as AdminPanel } from "./AdminPanel";
 export { default as Main } from "./Main";
 export { default as Badge } from "./Badge";
 export { default as Card } from "./Card";

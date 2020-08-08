@@ -16,23 +16,31 @@ const Sidebar = () => {
     {
       title: "Задачи и работы",
       newTasks: "3",
+      link: "/tasks",
     },
     {
       title: "Проекты",
       newTasks: "",
+      link: "/projects",
     },
     {
       title: "Календарь",
       newTasks: "",
+      link: "/calendar",
     },
     {
       title: "Возможности",
       newTasks: "5",
       dropDownItems: [
-        { text: "Вот это возможность", newTasks: "3" },
-        { text: "А эта тем более", newTasks: "1" },
-        { text: "Это просто невероятно", newTasks: "1" },
+        { text: "Вот это возможность", newTasks: "3", link: "/opportunity?1" },
+        { text: "А эта тем более", newTasks: "1", link: "/opportunity?2" },
+        {
+          text: "Это просто невероятно",
+          newTasks: "1",
+          link: "/opportunity?3",
+        },
       ],
+      link: "opportunity",
     },
   ];
   return (
@@ -49,6 +57,7 @@ const Sidebar = () => {
             acitveSubNavbar={acitveSubNavbar}
             selected={acitveNavbar === i}
             acitveNavbar={acitveNavbar}
+            link={item.link}
           />
         ))}
       </div>

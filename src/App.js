@@ -1,12 +1,21 @@
 import React from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-import { Auth, NavSelect, Sidebar, AdminPanel } from "./components";
+import { AdminPanel, Auth } from "./pages";
 
 function App() {
+  const { isAuth } = useSelector(({ auth }) => auth);
+
   return (
     <div className="wrapper">
-      {/* <Auth /> */}
-      <AdminPanel />
+      <Switch>
+        <Route path="/auth" component={Auth} />
+        <Route
+          path="/"
+          render={() => (isAuth ? <AdminPanel /> : <Redirect to="/auth" />)}
+        />
+      </Switch>
     </div>
   );
 }
