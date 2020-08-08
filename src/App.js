@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { AdminPanel, Auth } from "./pages";
+import { Auth, Main } from "./pages";
+import { MainRouter } from "./routes";
 
 function App() {
   const { isAuth } = useSelector(({ auth }) => auth);
@@ -13,7 +14,7 @@ function App() {
         <Route path="/auth" component={Auth} />
         <Route
           path="/"
-          render={() => (isAuth ? <AdminPanel /> : <Redirect to="/auth" />)}
+          render={() => (isAuth ? <Main /> : <Redirect to="/auth" />)}
         />
       </Switch>
     </div>

@@ -7,5 +7,9 @@ const Actions = {
     type: "SIDEBAR:SET_ACTIVE_SUB_NAVBAR",
     payload: status,
   }),
+  setOpenBurger: (status) => ({
+    type: "SIDEBAR:SET_OPEN_BURGER",
+    payload: status,
+  }),
 };
 export default Actions;

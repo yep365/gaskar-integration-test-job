@@ -1,5 +1,5 @@
 const initialState = {
-  isAuth: false,
+  isAuth: !!window.localStorage.token,
   error: null,
 };
 export default (state = initialState, { type, payload }) => {

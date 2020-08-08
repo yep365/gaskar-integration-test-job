@@ -4,6 +4,7 @@ export default (postData) => {
       resolve({
         status: "204",
         message: "success",
+        token: String(Math.random()),
       });
     } else {
       resolve({

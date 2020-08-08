@@ -27,9 +27,10 @@ const Actions = {
       title: "Проверьте свои логин или пароль!",
     };
     checkAuth(postData)
-      .then(({ status }) => {
+      .then(({ status, token }) => {
         if (status === "204") {
           dispatch(Actions.setAuth(true));
+          window.localStorage["token"] = token;
           openNotification(successMessage);
         } else {
           openNotification(wrongCridentialsMessage);
