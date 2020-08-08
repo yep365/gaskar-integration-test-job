@@ -1,11 +1,16 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
+import classNames from "classnames";
 
 import "./Input.sass";
 
-const Input = ({ label, placeholder = "", name, id, type }) => {
+const Input = ({ label, placeholder = "", name, id, type, thin }) => {
   return (
-    <div className="input">
+    <div
+      className={classNames("input", {
+        "input--thin": thin,
+      })}
+    >
       <label htmlFor={name}>{label}</label>
       <Field
         type={type ?? "text"}

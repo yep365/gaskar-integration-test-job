@@ -42,13 +42,19 @@ const Card = ({
     <div className="card">
       <div
         className="card-overview"
-        style={{ backgroundImage: `url(${background})` }}
+        style={{
+          backgroundImage: `url(${
+            background ?? "https://arkrealty.ru/upload/images/nevatowers_20.jpg"
+          })`,
+        }}
       >
         <div className="card-overview__header">
-          <div className="card-overview__type">{type}</div>
-          <div className="card-overview__status">{status}</div>
+          <div className="card-overview__type">{type ?? "Медицина"}</div>
+          <div className="card-overview__status">{status ?? "Строится"}</div>
         </div>
-        <div className="card-overview__name">{projectName}</div>
+        <div className="card-overview__name">
+          {projectName ?? "Hadassah Medical"}
+        </div>
       </div>
       <div className="card-info">
         <div className="card-info__title">{title}</div>

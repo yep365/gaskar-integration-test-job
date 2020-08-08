@@ -7,7 +7,9 @@ import "./AdminPanel.sass";
 const AdminPanel = () => {
   return (
     <div className="admin-panel">
-      <Sidebar />
+      <div className="admin-panel__sidebar">
+        <Sidebar />
+      </div>
       <Main />
     </div>
   );

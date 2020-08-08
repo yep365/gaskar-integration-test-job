@@ -3,16 +3,15 @@ import classNames from "classnames";
 
 import "./Button.sass";
 
-const Button = ({ text, small, fontSize }) => {
+const Button = ({ text, small, onClick }) => {
   return (
     <div
       className={classNames("button", {
         "button--small": small,
       })}
+      onClick={onClick}
     >
-      <button type="submit" style={{ fontSize: fontSize }}>
-        {text}
-      </button>
+      <button type="submit">{text}</button>
     </div>
   );
 };

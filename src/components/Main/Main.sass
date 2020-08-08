@@ -15,6 +15,8 @@
         &__account
             margin-right: 15px
             cursor: pointer
+        &__burger
+            display: none
 
     &-header
         &__title
@@ -24,7 +26,6 @@
                 font-size: 35px
                 font-weight: 400
                 letter-spacing: 3px
-
         &__menu
             display: flex
             align-items: center
@@ -43,14 +44,12 @@
                 left: -9px
                 top: 29px
                 background-color: #dbdbdb
-                border-left: 0.5px solid #390642
 
         &__item
             color: #adb0b3
             cursor: pointer
             &:last-child
                 margin-left: 23px
-
             &--selected
                 color: #27292c
                 position: relative
@@ -66,6 +65,10 @@
                     background-color: #6f48b3
                     border-left: 0.5px solid #390642
                     color: #fafafa
+
+    &-field
+        &__card
+            margin: 10px
 
     &-info
         margin-top: 47px
@@ -93,5 +96,86 @@
         &__selector
             &:first-child
                 margin-right: 21px
+
+    &-mobile
+        &__sidebar
+            display: none
+        &__burger
+            display: none
+
     &-field
         margin-top: 15px
+        display: flex
+        flex-wrap: wrap
+        flex-direction: row
+        justify-content: space-evenly
+        &__card
+            margin-bottom: 12px
+    &--sidebar
+
+        display: none
+@media screen and (max-width: 750px)
+    .main
+        &-wrapper
+            margin: 20px 17px
+        &-topbar
+            margin-right: 0
+            justify-content: space-between
+            &__account
+                margin-right: 0
+                margin-left: 1.7rem
+            &__burger
+                display: block
+                position: absolute
+                top: 10px
+                right: 1.7rem
+        &-field
+            &__card
+                margin: 8px 4px
+
+        &-mobile
+            &__sidebar
+                display: block
+                height: 100%
+            &__burger
+                display: block
+                position: absolute
+                top: 20px
+                right: 1.7rem
+
+@media screen and (max-width: 576px)
+    .main
+        &-wrapper
+            margin-top: 9px
+        &-header
+            &__title
+                h1
+                    font-size: 28px
+            &__menu
+                margin-top: 19px
+            &__item
+                font-size: 14px
+
+        &-info
+            margin-top: 29px
+            &__title
+                font-size: 15px
+                margin-left: 5px
+        &-control
+            &__sort
+                display: none
+@media screen and (max-width: 350px)
+    .main
+        &-wrapper
+            margin: 13px
+        &-info
+            &__title
+                font-size: 15px
+        &-header
+            &__item
+                font-size: 13px
+                &--selected
+                    &::after
+
+                        height: 3px
+                        width: 150px

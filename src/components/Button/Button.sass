@@ -22,8 +22,8 @@
             background-color: #9d3acfa8
             transition: 0.3s ease-in-out
         &:active
-            margin-top: 1px
-            margin-left: 1px
+            padding-top: 1px
+            padding-left: 1px
             background-color: #ffffff
             border: 1px solid #cb86ee
             transition: 0.1s
@@ -32,3 +32,31 @@
         button
             width: 195px
             height: 49px
+
+@media screen and (max-width: 576px)
+    .button
+        button
+            width: 180px
+            height: 39px
+            letter-spacing: 0px
+        &--small
+            button
+                font-size: 17px
+@media screen and (max-width: 380px)
+    .button
+        button
+            width: 120px
+            height: 39px
+            letter-spacing: 0px
+        &--small
+            button
+                font-size: 14px
+@media screen and (max-width: 350px)
+    .button
+        button
+            width: 120px
+            height: 39px
+            letter-spacing: 0px
+        &--small
+            button
+                font-size: 14px

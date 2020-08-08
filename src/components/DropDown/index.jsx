@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 
 import { sidebarActions } from "../../redux/actions";
 
+import "./DropDown.sass";
+
 const DropDown = ({
   selectedDropdown,
   dropDown,
