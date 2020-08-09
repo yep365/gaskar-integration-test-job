@@ -1,4 +1,5 @@
 import { postNewProjectSimulator, openNotification } from "../../utils/helpers";
+import { projectsApi } from "../../utils/api";
 
 const Actions = {
   addNewProject: (projectObj) => (dispatch, getState) => {
@@ -25,6 +26,8 @@ const Actions = {
         imageUrl ?? "https://arkrealty.ru/upload/images/nevatowers_20.jpg",
       percentComplited: "70",
     };
+    //В реальном кейсе случае использовал бы
+    // projectsApi.send(postData).then(({data})=> И т.д.)
     postNewProjectSimulator(postData)
       .then(({ status }) => {
         if (status === "204") {

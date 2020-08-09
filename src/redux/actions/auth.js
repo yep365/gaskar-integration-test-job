@@ -1,4 +1,5 @@
 import { checkAuth, openNotification } from "../../utils/helpers";
+import { userApi } from "../../utils/api";
 
 const Actions = {
   setAuth: (status) => ({
@@ -34,6 +35,8 @@ const Actions = {
       type: "error",
       title: "Проверьте свои логин или пароль!",
     };
+    //В реальном кейсе случае использовал бы
+    // userApi.signIn(postData).then(({data})=> И т.д.)
     checkAuth(postData)
       .then(({ status, token }) => {
         if (status === "204") {
