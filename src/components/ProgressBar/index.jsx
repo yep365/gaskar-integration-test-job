@@ -27,11 +27,17 @@ const ProgressBar = ({ squareSize, strokeWidth, percentage }) => {
         cy={sqSize / 2}
         r={radius}
         strokeWidth={`${strokeWidth}px`}
-        // Start progress marker at 12 O'Clock
         transform={`rotate(-90 ${sqSize / 2} ${sqSize / 2})`}
         style={{
           strokeDasharray: dashArray,
           strokeDashoffset: dashOffset,
+          stroke: `${
+            percentage > 65
+              ? `#79c385`
+              : percentage > 30
+              ? `#bed113`
+              : `#d35066`
+          }`,
         }}
       />
     </svg>

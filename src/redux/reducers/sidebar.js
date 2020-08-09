@@ -1,7 +1,6 @@
 const initialState = {
   acitveNavbar: null,
   acitveSubNavbar: null,
-  openBurger: false,
 };
 export default (state = initialState, { type, payload }) => {
   switch (type) {
@@ -14,11 +13,6 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         acitveSubNavbar: payload,
-      };
-    case "SIDEBAR:SET_OPEN_BURGER":
-      return {
-        ...state,
-        openBurger: payload,
       };
 
     default:

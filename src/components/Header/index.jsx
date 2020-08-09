@@ -6,6 +6,7 @@ import { Badge } from "../../components";
 
 const Header = () => {
   const dispatch = useDispatch();
+
   const onProfileClick = () => {
     dispatch(authActions.logOut());
   };

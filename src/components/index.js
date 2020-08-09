@@ -1,5 +1,4 @@
 export { default as AuthForm } from "./AuthForm";
-export { default as FormPropsReceiver } from "./FormPropsReceiver";
 export { default as Checkbox } from "./Checkbox";
 export { default as Button } from "./Button";
 export { default as Input } from "./Input";

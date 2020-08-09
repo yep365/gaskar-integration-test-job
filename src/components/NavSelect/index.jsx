@@ -22,9 +22,10 @@ const NavSelect = ({
   link,
   setOpenBurger,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const animation = {
     transform: `rotate(${selected && isOpen ? `180` : `0`}deg)`,
@@ -45,7 +46,9 @@ const NavSelect = ({
       onOpenDropdown();
     } else {
       history.push(link);
-      setOpenBurger(false);
+      if (window.innerWidth < 750) {
+        setOpenBurger(false);
+      }
     }
   };
 

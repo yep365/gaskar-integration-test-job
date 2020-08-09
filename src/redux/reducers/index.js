@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const reducers = ["auth", "sidebar"];
+const reducers = ["auth", "sidebar", "projects"];
 
 export default combineReducers(
   reducers.reduce((initial, name) => {

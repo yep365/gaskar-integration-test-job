@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import {
   ProjectsCategory,
@@ -15,15 +16,18 @@ import "./ProjectsPanel.sass";
 const ProjectsPanel = () => {
   const [selectedCategory, setselectedCategory] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  let type = "Медицина";
-  let status = "Строится";
-  let projectName = "Hadassah Medical";
-  let title = "ТЕРАПЕВТИЧЕССКИЙ КОРПУС";
-  let startDate = "08.04.2019";
-  let endDate = "31.01.2021";
-  let manager = "Денис Конев";
-  let admin = "Гросолим Лимитед";
-  let background = "https://arkrealty.ru/upload/images/nevatowers_20.jpg";
+  const { projectsArr } = useSelector(({ projects }) => projects);
+
+  // let type = "Медицина";
+  // let status = "Строится";
+  // let projectName = "Hadassah Medical";
+  // let title = "ТЕРАПЕВТИЧЕССКИЙ КОРПУС";
+  // let startDate = "08.04.2019";
+  // let endDate = "31.01.2021";
+  // let manager = "Денис Конев";
+  // let administrator = "Гросолим Лимитед";
+  // let imageUrl = "https://arkrealty.ru/upload/images/nevatowers_20.jpg";
+  // let percentComplited = "35";
   const categories = [
     { title: "СПИСОК ПРОЕКТОВ" },
     { title: "ДОРОЖНЫЕ КАРТЫ" },
@@ -81,132 +85,23 @@ const ProjectsPanel = () => {
         />
       </div>
       <div className="projects-field">
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
-        <div className="projects-field__card">
-          <Card
-            type={type}
-            status={status}
-            projectName={projectName}
-            title={title}
-            startDate={startDate}
-            endDate={endDate}
-            manager={manager}
-            admin={admin}
-            background={background}
-            percent={65}
-          />
-        </div>
+        {projectsArr?.map((project) => (
+          <div
+            className="projects-field__card"
+            key={String(project.manager) + String(project.administrator)}
+          >
+            <Card
+              projectName={project.projectName}
+              title={project.title}
+              startDate={project.date.startDate}
+              endDate={project.date.endDate}
+              manager={project.manager}
+              administrator={project.administrator}
+              imageUrl={project.imageUrl}
+              percent={Number(project.percentComplited)}
+            />
+          </div>
+        ))}
       </div>
       <CreateProjectModal visible={modalOpen} onCancel={onCancelModal} />
     </>

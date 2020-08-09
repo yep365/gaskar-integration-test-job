@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { Auth, Main } from "./pages";
+import { Auth } from "./pages";
 import { MainRouter } from "./routes";
 
 function App() {

@@ -23,7 +23,9 @@ const DropDown = ({
     if (acitveSubNavbar !== index) {
       history.push(link);
       dispatch(sidebarActions.setActiveSubNavbar(index));
-      setOpenBurger(false);
+      if (window.innerWidth < 750) {
+        setOpenBurger(false);
+      }
     }
   };
   return (

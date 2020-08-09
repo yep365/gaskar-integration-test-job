@@ -16,8 +16,8 @@ const Card = ({
   startDate,
   endDate,
   manager,
-  admin,
-  background,
+  administrator,
+  imageUrl,
   percent,
 }) => {
   const contributingPeople = [
@@ -43,9 +43,7 @@ const Card = ({
       <div
         className="card-overview"
         style={{
-          backgroundImage: `url(${
-            background ?? "https://arkrealty.ru/upload/images/nevatowers_20.jpg"
-          })`,
+          backgroundImage: `url(${imageUrl})`,
         }}
       >
         <div className="card-overview__header">
@@ -69,13 +67,13 @@ const Card = ({
           </div>
           <div className="card-info__credential">
             <img className="card-info__img" src={Rub} alt={Rub} />
-            <div className="card-info__description">{admin}</div>
+            <div className="card-info__description">{administrator}</div>
           </div>
         </div>
         <div className="card-info__bottom">
           <div className="card-info__people">
             {contributingPeople?.map((contributor) => (
-              <div className="card-info__human">
+              <div className="card-info__human" key={contributor.imgUrl}>
                 <Badge imgUrl={contributor.imgUrl} />
               </div>
             ))}

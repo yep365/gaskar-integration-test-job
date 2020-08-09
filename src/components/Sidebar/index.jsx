@@ -11,11 +11,12 @@ import Logo from "../../assets/Sidebar-logo.png";
 import "./Sidebar.sass";
 
 const Sidebar = ({ setOpenBurger }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const { acitveNavbar, acitveSubNavbar } = useSelector(
     ({ sidebar }) => sidebar
   );
-  const dispatch = useDispatch();
-  const history = useHistory();
 
   const sidebarArr = [
     {

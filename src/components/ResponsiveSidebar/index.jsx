@@ -17,7 +17,7 @@ const ResponsiveSidebar = ({ openBurger, setOpenBurger }) => {
           <Sidebar setOpenBurger={setOpenBurger} />
         </div>
       )}
-      <div className="main-mobile__burger" style={{ zIndex: 1000 }}>
+      <div className="main-mobile__burger">
         <HamburgerMenu
           isOpen={openBurger}
           width={18}
