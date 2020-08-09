@@ -20,6 +20,7 @@ const NavSelect = ({
   index,
   acitveNavbar,
   link,
+  setOpenBurger,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
@@ -40,9 +41,11 @@ const NavSelect = ({
 
   const handleClick = () => {
     dispatch(sidebarActions.setActiveNavbar(index));
-    history.push(link);
     if (dropDownItems) {
       onOpenDropdown();
+    } else {
+      history.push(link);
+      setOpenBurger(false);
     }
   };
 
@@ -79,7 +82,7 @@ const NavSelect = ({
         <>
           {dropDownItems.map((item, index) => (
             <DropDown
-              selectedDropdown={Number(index) === Number(acitveSubNavbar)}
+              selectedDropdown={index === acitveSubNavbar}
               text={item.text}
               newTasks={item.newTasks}
               dropDown
@@ -88,6 +91,7 @@ const NavSelect = ({
               acitveSubNavbar={acitveSubNavbar}
               link={item.link}
               history={history}
+              setOpenBurger={setOpenBurger}
             />
           ))}
         </>

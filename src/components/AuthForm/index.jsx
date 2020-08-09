@@ -25,7 +25,7 @@ const AuthForm = () => {
 
   useEffect(() => {
     if (!!isAuth) {
-      history.push("/");
+      history.push("/projects");
     }
   }, [isAuth]);
 
@@ -62,12 +62,6 @@ const AuthForm = () => {
         {({ isValid, dirty, errors, validateForm }) => (
           <Form>
             <div className="auth-form__content">
-              {/* <FormPropsReceiver
-                isValid={isValid}
-                dirty={dirty}
-                errors={errors}
-                validateForm={validateForm}
-              /> */}
               <Input label="Логин" placeholder="Логин" name="login" />
               <Input
                 label="Пароль"

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-import { Category, Button, CreateProjectModal, Card } from "../../components";
+import {
+  ProjectsCategory,
+  Button,
+  CreateProjectModal,
+  Card,
+} from "../../components";
 
 import SortTabs from "../../assets/SortTabs.png";
 import SortTabs1 from "../../assets/SortTabs1.png";
@@ -32,13 +37,13 @@ const ProjectsPanel = () => {
 
   return (
     <>
-      <div className="main-header">
-        <div className="main-header__title">
+      <div className="projects-header">
+        <div className="projects-header__title">
           <h1>ПРОЕКТЫ</h1>
         </div>
-        <div className="main-header__menu">
+        <div className="projects-header__menu">
           {categories?.map((category, i) => (
-            <Category
+            <ProjectsCategory
               text={category.title}
               key={category.title}
               selected={selectedCategory === i}
@@ -48,12 +53,12 @@ const ProjectsPanel = () => {
           ))}
         </div>
       </div>
-      <div className="main-info">
-        <div className="main-info__title">
+      <div className="projects-info">
+        <div className="projects-info__title">
           {categories?.[selectedCategory].title}
         </div>
-        <div className="main-info__control">
-          <div className="main-control__btn">
+        <div className="projects-info__control">
+          <div className="projects-control__btn">
             <Button
               text="Добавить проект"
               small
@@ -63,16 +68,20 @@ const ProjectsPanel = () => {
           </div>
         </div>
       </div>
-      <div className="main-control__sort">
-        <img className="main-control__selector" src={SortTabs} alt={SortTabs} />
+      <div className="projects-control__sort">
         <img
-          className="main-control__selector"
+          className="projects-control__selector"
+          src={SortTabs}
+          alt={SortTabs}
+        />
+        <img
+          className="projects-control__selector"
           src={SortTabs1}
           alt={SortTabs1}
         />
       </div>
-      <div className="main-field">
-        <div className="main-field__card">
+      <div className="projects-field">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -86,7 +95,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -100,7 +109,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -114,7 +123,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -128,7 +137,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -142,7 +151,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -156,7 +165,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -170,7 +179,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}
@@ -184,7 +193,7 @@ const ProjectsPanel = () => {
             percent={65}
           />
         </div>
-        <div className="main-field__card">
+        <div className="projects-field__card">
           <Card
             type={type}
             status={status}

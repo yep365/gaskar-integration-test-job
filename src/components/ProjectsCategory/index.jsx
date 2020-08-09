@@ -1,14 +1,14 @@
 import React from "react";
 import classNames from "classnames";
 
-const Category = ({ text, selected, setselectedCategory, i }) => {
+const ProjectsCategory = ({ text, selected, setselectedCategory, i }) => {
   const onSelectCategory = () => {
     setselectedCategory(i);
   };
   return (
     <div
-      className={classNames("main-header__item", {
-        "main-header__item--selected": selected,
+      className={classNames("projects-header__item", {
+        "projects-header__item--selected": selected,
       })}
       onClick={onSelectCategory}
     >
@@ -16,4 +16,4 @@ const Category = ({ text, selected, setselectedCategory, i }) => {
     </div>
   );
 };
-export default Category;
+export default ProjectsCategory;

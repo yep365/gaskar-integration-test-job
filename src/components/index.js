@@ -11,4 +11,6 @@ export { default as Badge } from "./Badge";
 export { default as Card } from "./Card";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as CreateProjectModal } from "./CreateProjectModal";
-export { default as Category } from "./Category";
+export { default as ProjectsCategory } from "./ProjectsCategory";
+export { default as Header } from "./Header";
+export { default as ResponsiveSidebar } from "./ResponsiveSidebar";

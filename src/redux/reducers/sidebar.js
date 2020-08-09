@@ -1,5 +1,5 @@
 const initialState = {
-  acitveNavbar: 1,
+  acitveNavbar: null,
   acitveSubNavbar: null,
   openBurger: false,
 };

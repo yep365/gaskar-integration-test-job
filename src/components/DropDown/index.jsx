@@ -15,6 +15,7 @@ const DropDown = ({
   acitveSubNavbar,
   link,
   history,
+  setOpenBurger,
 }) => {
   const dispatch = useDispatch();
 
@@ -22,6 +23,7 @@ const DropDown = ({
     if (acitveSubNavbar !== index) {
       history.push(link);
       dispatch(sidebarActions.setActiveSubNavbar(index));
+      setOpenBurger(false);
     }
   };
   return (

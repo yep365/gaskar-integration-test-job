@@ -14,7 +14,7 @@ function App() {
         <Route path="/auth" component={Auth} />
         <Route
           path="/"
-          render={() => (isAuth ? <Main /> : <Redirect to="/auth" />)}
+          render={() => (isAuth ? <MainRouter /> : <Redirect to="/auth" />)}
         />
       </Switch>
     </div>

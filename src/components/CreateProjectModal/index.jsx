@@ -30,6 +30,7 @@ const CreateProjectModal = ({ visible, onCancel }) => {
 
   const onSubmit = (values, { resetForm }) => {
     // dispatch(cellActions.setValidation(false));
+    console.log(values);
   };
   return (
     <Modal open={visible} onClose={onCancel} title="Добавить проект" center>

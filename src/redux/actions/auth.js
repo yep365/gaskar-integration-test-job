@@ -9,6 +9,14 @@ const Actions = {
     type: "AUTH:SET_ERROR",
     payload: err,
   }),
+  logOut: () => (dispatch) => {
+    dispatch(Actions.setAuth(false));
+    delete window.localStorage.token;
+    openNotification({
+      title: "Вы успешно вышли из системы!",
+      type: "success",
+    });
+  },
   fetchAuthStatus: (login, pass) => (dispatch) => {
     let postData = {
       login: login,
